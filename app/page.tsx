@@ -237,7 +237,7 @@ export default function Home() {
 
       <Hero />
 
-      <div className="flex justify-center mt-6 px-8">
+      <div className="flex justify-center px-8">
         <div className="flex justify-center flex-wrap gap-y-6 gap-x-6 max-w-[100rem]">
           {projects.map((project, index) => (
             <ProjectItem
