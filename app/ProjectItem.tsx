@@ -227,7 +227,7 @@ export default function ProjectItem({ project, index }: ProjectItemProps) {
                           <div className="font-bold text-2xl -tracking-wider transition-all group-hover:text-blue-500">
                             {project.name}
                           </div>
-                          <div className="flex flex-row gap-[0.28rem]">
+                          <div className="flex flex-row gap-[0.4rem]">
                             {project.projectType && (
                               <div
                                 className="px-2 py-[0.06rem] border-[1.5px] rounded-md text-xs font-bold flex justify-center items-center"

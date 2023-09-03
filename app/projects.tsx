@@ -61,10 +61,37 @@ export const projects: Project[] = [
     ),
   },
   {
-    name: "Cracking Mancala with ML",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+    name: "Neural Nets for Mancala",
+    displayImage: "/projects/mancala.png",
+    tagline: "Mastering the age-old game using ML.",
+    projectType: projectTypes.ML,
+    technologies: [
+      technologies.Python,
+      technologies.PyTorch,
+      technologies.NumPy,
+    ],
+    link: "/projects/mancala-research-paper.pdf",
+    githubLink: "https://github.com/anish-shanbhag/mancala-neural-networks",
+    longDescription: (
+      <div>
+        <a
+          href="https://en.wikipedia.org/wiki/Mancala"
+          className="text-blue-500 underline"
+        >
+          Mancala
+        </a>{" "}
+        is one of the world&apos;s oldest board games and has a rich and storied
+        history dating back over 1,300 years. Despite this, there has been
+        relatively little research into AI systems that can effectively play the
+        strategy-based game. <br /> <br />
+        Since I've been playing mancala for as long as I can remember, I began
+        to investigate effective ML methods for training an optimal player. This
+        project is the result of that effort: a neural network-based approach
+        trained via two unsupervised algorithms, deep Q learning and
+        neuroevolution (a genetic algorithm), resulting in a pretty smart system
+        that achieves a 98% winrate. Check out my research paper to learn more!
+      </div>
+    ),
   },
   {
     name: "Minecraft API",
