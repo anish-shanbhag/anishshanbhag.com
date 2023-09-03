@@ -3,11 +3,6 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin", "latin-ext"] });
 
-export const metadata = {
-  title: "Setify",
-  description: "Mix and match your projects",
-};
-
 export default function RootLayout({
   children,
 }: {

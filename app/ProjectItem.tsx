@@ -131,7 +131,7 @@ export default function ProjectItem({ project, index }: ProjectItemProps) {
               style={{
                 width: isActive
                   ? isOpen
-                    ? "min(calc(100vw - 2rem), 58rem)"
+                    ? "min(calc(100vw - 2rem), 61rem)"
                     : fixedWidth
                   : "100%",
               }}
@@ -196,13 +196,28 @@ export default function ProjectItem({ project, index }: ProjectItemProps) {
                               : "w-[18.5rem]"
                           } transition-all ${OPEN_ANIMATION_DURATION_CLASS}`}
                         >
-                          <Image
-                            fill
-                            src={project.displayImage}
-                            alt={project.name}
-                            priority={index < 5}
-                            className="object-cover rounded-md mr-4"
-                          />
+                          {project.displayImage.endsWith(".mp4") ? (
+                            <video
+                              loop
+                              autoPlay
+                              // controls
+                              muted
+                              className="object-cover rounded-md mr-4"
+                            >
+                              <source
+                                src={project.displayImage}
+                                type="video/mp4"
+                              />
+                            </video>
+                          ) : (
+                            <Image
+                              fill
+                              src={project.displayImage}
+                              alt={project.name}
+                              priority={index < 5}
+                              className="object-cover rounded-md mr-4"
+                            />
+                          )}
                         </div>
                         <div
                           className={`flex flex-col gap-2 mt-2 ${
@@ -270,50 +285,12 @@ export default function ProjectItem({ project, index }: ProjectItemProps) {
                       {isActive && (
                         <div
                           ref={description}
-                          className="absolute w-[min(calc(100vw-5rem),54rem)] overflow-hidden"
+                          className="absolute w-[min(calc(100vw-5rem),57rem)] overflow-hidden"
                         >
                           {!multiColumn && (
                             <ProjectFeatures project={project} />
                           )}
-                          Lorem ipsum dolor sit amet consectetur adipiscing elit
-                          habitasse, magna mattis enim tincidunt risus non
-                          congue posuere sagittis, sociosqu cursus bibendum
-                          penatibus in sociis molestie. At ante vel in tincidunt
-                          etiam habitant litora nullam aenean duis quisque,
-                          pellentesque et tortor facilisis ultrices semper
-                          interdum porta sociosqu. Curabitur elit facilisi netus
-                          malesuada arcu per, ad ultrices nam est sapien,
-                          pharetra taciti aenean elementum augue. Porttitor
-                          litora torquent sit egestas cras hac nec viverra,
-                          velit etiam semper eget vestibulum gravida nam, curae
-                          at suscipit pulvinar tempus odio senectus ac, nascetur
-                          montes vivamus commodo accumsan lectus. Scelerisque
-                          turpis est praesent viverra sem cubilia pretium mi
-                          laoreet a suspendisse per cras, phasellus curae
-                          imperdiet tempor integer dignissim habitant facilisi
-                          ad etiam ipsum dictumst. Semper potenti tincidunt
-                          convallis enim vivamus sapien erat purus cum porttitor
-                          at, eu primis arcu natoque vehicula facilisi aptent a
-                          massa fusce, ante ullamcorper feugiat montes eget
-                          dapibus volutpat luctus habitant phasellus. Laoreet
-                          dolor auctor hac nullam sodales praesent aenean felis,
-                          erat eu accumsan nulla integer placerat montes mus
-                          interdum, dignissim venenatis nam dui ipsum lorem
-                          commodo. Sed gravida erat elementum vel pellentesque
-                          libero suscipit natoque non, arcu nascetur montes
-                          purus eleifend odio netus class vivamus, in parturient
-                          cursus tristique placerat mollis donec malesuada.
-                          Libero porta a convallis magna duis netus ad laoreet,
-                          pharetra pellentesque interdum varius enim habitasse
-                          lectus eleifend adipiscing, tempor congue erat feugiat
-                          amet orci curae. Auctor etiam neque viverra ultricies
-                          dignissim placerat vehicula, eget fringilla torquent
-                          varius sem hendrerit ultrices, mattis pretium gravida
-                          erat ipsum tortor. Semper sociosqu tempus nunc
-                          sollicitudin pulvinar at magna consectetur laoreet
-                          eget ac lorem tortor, erat aptent viverra donec
-                          facilisis litora dui luctus penatibus dis vel.
-                          Scelerisque ullamcorper volutpat
+                          {project.longDescription}
                         </div>
                       )}
                     </div>
@@ -333,23 +310,35 @@ function ProjectFeatures({ project }: { project: Project }) {
     <div>
       <div className="flex flex-col gap-2 w-full">
         <div className="text-gray-400">{project.tagline}</div>
-        <a className="font-bold cursor-pointer hover:scale-95 active:scale-[85%] duration-300 w-full inline-block transition-all bg-teal-400 rounded-md py-2 text-white">
-          <div className="flex justify-center items-center gap-1 w-full overflow-hidden">
-            <FaLink />
-            Check It Out
-          </div>
-        </a>
-        <a className="font-bold cursor-pointer hover:scale-95 active:scale-[85%] w-full inline-block transition bg-black rounded-md py-2 text-white">
-          <div className="flex justify-center items-center gap-1 w-full overflow-hidden">
-            <BsGithub />
-            View on GitHub
-          </div>
-        </a>
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            className="select-none font-bold cursor-pointer hover:scale-95 active:scale-[85%] duration-300 w-full inline-block transition-all bg-teal-400 rounded-md py-2 text-white"
+          >
+            <div className="flex justify-center items-center gap-1 w-full overflow-hidden">
+              <FaLink />
+              Check It Out
+            </div>
+          </a>
+        )}
+        {project.githubLink && (
+          <a
+            href={project.githubLink}
+            target="_blank"
+            className="select-none font-bold cursor-pointer hover:scale-95 active:scale-[85%] w-full inline-block transition bg-black rounded-md py-2 text-white"
+          >
+            <div className="flex justify-center items-center gap-1 w-full overflow-hidden">
+              <BsGithub />
+              View on GitHub
+            </div>
+          </a>
+        )}
       </div>
       <div className="text-xl -tracking-wider mt-4 mb-1 font-bold">
         Tech Stack
       </div>
-      <div className="flex flex-wrap gap-1 w-full lg:w-[13.75rem] mb-2">
+      <div className="flex flex-wrap gap-1 w-full lg:w-[16.75rem] mb-2">
         {project.technologies?.map((technology) => (
           <div
             key={technology.name}
