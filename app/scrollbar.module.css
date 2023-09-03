@@ -1,6 +1,7 @@
 /* width */
 .scrollable::-webkit-scrollbar {
   width: 20px;
+  transition: opacity 1s;
 }
 
 /* Track */
@@ -15,9 +16,4 @@
   box-shadow: inset 0 0 10px 10px black;
   border: solid 6px transparent;
   border-radius: 10px;
-}
-
-/* Handle on hover */
-.scrollable::-webkit-scrollbar-thumb:hover {
-  transform: scale(110%);
 }

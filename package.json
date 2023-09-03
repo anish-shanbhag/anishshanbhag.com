@@ -1,5 +1,5 @@
 {
-  "name": "setify",
+  "name": "anishshanbhag.com",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "jotai": "^2.4.1",
     "next": "13.4.19",
     "noisejs": "^2.1.0",
     "react": "18.2.0",
@@ -19,7 +20,8 @@
     "react-parallax-tilt": "^1.7.164",
     "react-responsive": "^9.0.2",
     "react-use-scroll-direction": "^0.1.0",
-    "react-use-scroll-position": "^2.0.0"
+    "react-use-scroll-position": "^2.0.0",
+    "sharp": "^0.32.5"
   },
   "devDependencies": {
     "@types/eslint": "^8.44.2",

@@ -1,8 +1,8 @@
 import { ProjectType, Technology } from "./tags";
 
 export interface Project {
-  title: string;
-  image: string;
+  name: string;
+  displayImage: string;
   additionalImages?: string[];
   projectType?: ProjectType;
   technologies: Technology[];
