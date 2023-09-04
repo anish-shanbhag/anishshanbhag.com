@@ -41,10 +41,7 @@ export const projects: Project[] = [
         the same place you write it? <br /> <br />
         With AutoBlog, you can connect you own codebase in one click and scroll
         through tutorial articles like{" "}
-        <a
-          href="https://scrollycoding-preview-anish-shanbhag.vercel.app/posts/dotted-curve"
-          className="text-blue-500 underline"
-        >
+        <a href="https://scrollycoding-preview-anish-shanbhag.vercel.app/posts/dotted-curve">
           this one about creating a cool-looking design
         </a>
         , all while watching your local code change in real-time as the author
@@ -52,11 +49,8 @@ export const projects: Project[] = [
         that tie into their explanations and insights, making it easier than
         ever to understand how the author’s written ideas connect with your own
         project. <br /> <br />
-        Check out my{" "}
-        <a href="/projects/AutoBlog.pdf" className="text-blue-500 underline">
-          pitch deck
-        </a>{" "}
-        for this project, presented at a UC Berkeley SCET startup competition!
+        Check out my <a href="/projects/AutoBlog.pdf">pitch deck</a> for this
+        project, presented at a UC Berkeley SCET startup competition!
       </div>
     ),
   },
@@ -74,32 +68,30 @@ export const projects: Project[] = [
     githubLink: "https://github.com/anish-shanbhag/mancala-neural-networks",
     longDescription: (
       <div>
-        <a
-          href="https://en.wikipedia.org/wiki/Mancala"
-          className="text-blue-500 underline"
-        >
-          Mancala
-        </a>{" "}
-        is one of the world&apos;s oldest board games and has a rich and storied
-        history dating back over 1,300 years. Despite this, there has been
-        relatively little research into AI systems that can effectively play the
-        strategy-based game. <br /> <br />
-        Since I&apos;ve been playing mancala for as long as I can remember, I
-        began to investigate effective ML methods for training an optimal
-        player. This project is the result of that effort: a neural
-        network-based approach trained via two unsupervised algorithms, deep Q
-        learning and neuroevolution (a genetic algorithm), resulting in a pretty
-        smart system that achieves a 98% winrate. Check out my research paper to
+        <a href="https://en.wikipedia.org/wiki/Mancala">Mancala</a> is one of
+        the world&apos;s oldest board games and has a storied history dating
+        back over 1,300 years. Despite this, there has been relatively little
+        research into AI systems that can effectively play the strategy-based
+        game. <br /> <br />
+        I&apos;ve been playing Mancala for as long as I can remember, and wanted
+        to see if I could create a worthy AI-based opponent. I began to
+        investigate effective ML methods for training an optimal player; this
+        project is the result of that effort: a neural network-based approach
+        which is trained via two unsupervised algorithms, deep Q learning and
+        neuroevolution (a genetic algorithm), resulting in a pretty smart system
+        that achieves a 98% winrate. I still haven't beat it to this day 😅
+        Check out my{" "}
+        <a href="/projects/mancala-research-paper.pdf">research paper</a> to
         learn more!
       </div>
     ),
   },
-  {
-    name: "Minecraft API",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
-  },
+  // TODO: {
+  //   name: "Minecraft API",
+  //   displayImage:
+  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
+  //   tagline: "A sample project.",
+  // },
   {
     name: "Nexus",
     displayImage:
