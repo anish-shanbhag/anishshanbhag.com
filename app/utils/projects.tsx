@@ -84,12 +84,13 @@ export const projects: Project[] = [
         history dating back over 1,300 years. Despite this, there has been
         relatively little research into AI systems that can effectively play the
         strategy-based game. <br /> <br />
-        Since I've been playing mancala for as long as I can remember, I began
-        to investigate effective ML methods for training an optimal player. This
-        project is the result of that effort: a neural network-based approach
-        trained via two unsupervised algorithms, deep Q learning and
-        neuroevolution (a genetic algorithm), resulting in a pretty smart system
-        that achieves a 98% winrate. Check out my research paper to learn more!
+        Since I&apos;ve been playing mancala for as long as I can remember, I
+        began to investigate effective ML methods for training an optimal
+        player. This project is the result of that effort: a neural
+        network-based approach trained via two unsupervised algorithms, deep Q
+        learning and neuroevolution (a genetic algorithm), resulting in a pretty
+        smart system that achieves a 98% winrate. Check out my research paper to
+        learn more!
       </div>
     ),
   },
