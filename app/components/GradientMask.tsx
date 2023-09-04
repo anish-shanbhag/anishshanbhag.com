@@ -33,7 +33,7 @@ export default function GradientMask({
   const textContainer = useRef<HTMLDivElement>(null);
   const didSetupAnimation = useRef(false);
   const motionMode = useRef(MotionMode.Constant);
-  const inViewRef = useRef(false);
+  const inViewRef = useRef(true);
   const { ref, inView } = useInView();
   inViewRef.current = inView;
 
@@ -61,7 +61,6 @@ export default function GradientMask({
     }
 
     function run() {
-      // TODO: only if on screen
       if (inViewRef.current) {
         for (let x = 0; x <= 32; x++) {
           for (let y = 0; y <= 11; y++) {
