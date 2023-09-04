@@ -13,7 +13,7 @@ export default function ProjectFeatures({ project }: { project: Project }) {
           <a
             href={project.link}
             target="_blank"
-            className="select-none font-bold cursor-pointer hover:scale-95 active:scale-[85%] duration-300 w-full inline-block transition-all bg-teal-400 rounded-md py-2 text-white"
+            className="select-none no-underline font-bold cursor-pointer hover:scale-95 active:scale-[85%] duration-300 w-full inline-block transition-all bg-teal-400 rounded-md py-2 text-white"
           >
             <div className="flex justify-center items-center gap-1 w-full overflow-hidden">
               <FaLink />
@@ -25,7 +25,7 @@ export default function ProjectFeatures({ project }: { project: Project }) {
           <a
             href={project.githubLink}
             target="_blank"
-            className="select-none font-bold cursor-pointer hover:scale-95 active:scale-[85%] w-full inline-block transition bg-black rounded-md py-2 text-white"
+            className="select-none no-underline font-bold cursor-pointer hover:scale-95 active:scale-[85%] w-full inline-block transition bg-black rounded-md py-2 text-white"
           >
             <div className="flex justify-center items-center gap-1 w-full overflow-hidden">
               <BsGithub />

@@ -8,6 +8,11 @@
   margin: 0;
 }
 
+a {
+  color: rgb(59 130 246);
+  text-decoration: underline;
+}
+
 body {
   color: black;
   background: white;
