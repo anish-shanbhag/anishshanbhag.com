@@ -53,7 +53,7 @@ export const projects: Project[] = [
         ever to understand how the author’s written ideas connect with your own
         project. <br /> <br />
         Check out my{" "}
-        <a href="/AutoBlog.pdf" className="text-blue-500 underline">
+        <a href="/projects/AutoBlog.pdf" className="text-blue-500 underline">
           pitch deck
         </a>{" "}
         for this project, presented at a UC Berkeley SCET startup competition!

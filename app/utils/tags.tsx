@@ -51,82 +51,82 @@ export const technologies = {
   },
   Python: {
     name: "Python",
-    icon: "/python.png",
+    icon: "python.png",
     backgroundColor: "#306998", // or #FFD43B
   },
   Rust: {
     name: "Rust",
-    icon: "/rust.png",
+    icon: "rust.png",
     backgroundColor: "#CE412B",
   },
   CSharp: {
     name: "C#",
-    icon: "/csharp.png",
+    icon: "csharp.png",
     backgroundColor: "#6a1577",
   },
   Go: {
     name: "Go",
-    icon: "/go.png",
+    icon: "go.png",
     backgroundColor: "#00ADD8",
   },
   SQL: {
     name: "SQL",
-    icon: "/sql.png",
+    icon: "sql.png",
     backgroundColor: "#7fba00",
   },
   CPlusPlus: {
     name: "C++",
-    icon: "/cpp.png",
+    icon: "cpp.png",
     backgroundColor: "#044F88",
   },
   Next: {
     name: "Next.js",
-    icon: "/nextjs.svg",
+    icon: "nextjs.svg",
     backgroundColor: "black",
   },
   Vue: {
     name: "Vue.js",
-    icon: "/vuejs.png",
+    icon: "vuejs.png",
     backgroundColor: "#41B883",
   },
   Node: {
     name: "Node.js",
-    icon: "/node.png",
+    icon: "node.png",
     backgroundColor: "#3C873A",
   },
   AWS: {
     name: "AWS",
-    icon: "/aws.png",
+    icon: "aws.png",
     backgroundColor: "#ff9900",
   },
   Docker: {
     name: "Docker",
-    icon: "/docker.png",
+    icon: "docker.png",
     backgroundColor: "#1D63ED",
   },
   Unity: {
     name: "Unity",
-    icon: "/unity.png",
+    icon: "unity.png",
     backgroundColor: "black",
   },
   PyTorch: {
     name: "PyTorch",
-    icon: "/pytorch.png",
+    icon: "pytorch.png",
     backgroundColor: "#DE3412",
   },
   NumPy: {
     name: "NumPy",
-    icon: "/numpy.png",
+    icon: "numpy.png",
     backgroundColor: "#4d77cf",
   },
   Vercel: {
     name: "Vercel",
-    icon: "/vercel.svg",
+    icon: "vercel.svg",
     backgroundColor: "black",
   },
   Firebase: {
     name: "Firebase",
-    icon: "/firebase.png",
+    icon: "firebase.png",
     backgroundColor: "#F57C00",
   },
 } satisfies Record<string, Technology>;

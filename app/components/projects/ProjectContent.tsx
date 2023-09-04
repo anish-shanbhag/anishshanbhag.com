@@ -233,7 +233,9 @@ export const ProjectContent = memo(function ProjectContent({
                             >
                               {typeof technology.icon === "string" ? (
                                 <Image
-                                  src={technology.icon}
+                                  src={
+                                    "/images/technologies/" + technology.icon
+                                  }
                                   alt={technology.name}
                                   width={18}
                                   height={18}

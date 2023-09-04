@@ -10,11 +10,12 @@ import { projects } from "../utils/projects";
 export default function Home() {
   return (
     <>
+      <title>Anish Shanbhag | Home</title>
       <BlurOverlay />
       <Transitioner />
       <div className="fixed top-0 w-full h-full opacity-80 z-[-30]">
         <Image
-          src="/sky.png"
+          src="/images/sky.png"
           priority
           fill
           className="object-fill w-full"

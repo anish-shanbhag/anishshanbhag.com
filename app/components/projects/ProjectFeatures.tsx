@@ -50,7 +50,7 @@ export default function ProjectFeatures({ project }: { project: Project }) {
               <div className="relative bg-white rounded-sm w-[22px] h-[22px] flex justify-center items-center">
                 {typeof technology.icon === "string" ? (
                   <Image
-                    src={technology.icon}
+                    src={"/images/technologies/" + technology.icon}
                     alt={technology.name}
                     width={22}
                     height={22}
