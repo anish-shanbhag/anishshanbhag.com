@@ -9,11 +9,11 @@ import { FaArrowDown } from "react-icons/fa";
 import Tilt from "react-parallax-tilt";
 import { useRef } from "react";
 
-import Blur from "../public/blur.webp";
-import Blur2 from "../public/blur2.png";
-import Blur3 from "../public/blur3.png";
-import Blur4 from "../public/blur4.png";
-import Blur5 from "../public/blur5.png";
+import Blur from "../../public/blur.webp";
+import Blur2 from "../../public/blur2.png";
+import Blur3 from "../../public/blur3.png";
+import Blur4 from "../../public/blur4.png";
+import Blur5 from "../../public/blur5.png";
 
 import GradientMask from "./GradientMask";
 

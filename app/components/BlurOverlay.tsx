@@ -2,8 +2,8 @@
 
 import { useAtomValue } from "jotai";
 
-import { activeProjectAtom } from "./state";
-import { OPEN_ANIMATION_DURATION_CLASS } from "./constants";
+import { activeProjectAtom } from "../utils/state";
+import { OPEN_ANIMATION_DURATION_CLASS } from "../utils/constants";
 
 export default function BlurOverlay() {
   const activeProject = useAtomValue(activeProjectAtom);

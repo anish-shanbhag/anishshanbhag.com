@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-import Hero from "./Hero";
-import Navbar from "./Navbar";
-import ProjectItem from "./ProjectItem";
-import Transitioner from "./Transitioner";
-import BlurOverlay from "./BlurOverlay";
-import { projects } from "./projects";
+import Hero from "../components/Hero";
+import Navbar from "../components/Navbar";
+import ProjectCard from "../components/projects/ProjectCard";
+import Transitioner from "../components/Transitioner";
+import BlurOverlay from "../components/BlurOverlay";
+import { projects } from "../utils/projects";
 
 export default function Home() {
   return (
@@ -28,10 +28,11 @@ export default function Home() {
       <div className="flex justify-center px-8 mb-8">
         <div className="flex justify-center flex-wrap gap-y-6 gap-x-6 max-w-[100rem]">
           {projects.map((project, index) => (
-            <ProjectItem key={project.name} project={project} index={index} />
+            <ProjectCard key={project.name} project={project} index={index} />
           ))}
         </div>
       </div>
+
       <div className="relative flex justify-center items-center mb-8 -tracking-wider">
         Made with ❤️ in Berkeley, CA
       </div>

@@ -2,6 +2,7 @@
 
 import { ReactNode, useLayoutEffect, useRef } from "react";
 import { Noise } from "noisejs";
+import { useInView } from "react-intersection-observer";
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const noise = new Noise(Math.random());
@@ -32,6 +33,9 @@ export default function GradientMask({
   const textContainer = useRef<HTMLDivElement>(null);
   const didSetupAnimation = useRef(false);
   const motionMode = useRef(MotionMode.Constant);
+  const inViewRef = useRef(false);
+  const { ref, inView } = useInView();
+  inViewRef.current = inView;
 
   useLayoutEffect(() => {
     if (didSetupAnimation.current) return;
@@ -57,43 +61,47 @@ export default function GradientMask({
     }
 
     function run() {
-      for (let x = 0; x <= 32; x++) {
-        for (let y = 0; y <= 11; y++) {
-          col(
-            x,
-            y,
-            50,
-            G(x + t + Math.sin(t) * 100, y - t - Math.cos(t) * 100),
-            B(x - t - Math.cos(t) * 80, y + t + Math.sin(t) * 80),
-          );
+      // TODO: only if on screen
+      if (inViewRef.current) {
+        for (let x = 0; x <= 32; x++) {
+          for (let y = 0; y <= 11; y++) {
+            col(
+              x,
+              y,
+              50,
+              G(x + t + Math.sin(t) * 100, y - t - Math.cos(t) * 100),
+              B(x - t - Math.cos(t) * 80, y + t + Math.sin(t) * 80),
+            );
+          }
         }
+
+        const elapsed = Date.now() - prevFrameTimestamp;
+        prevFrameTimestamp = Date.now();
+
+        if (motionMode.current === MotionMode.SpeedUp) {
+          motionRate += MOTION_ACCELERATION * elapsed;
+        } else if (motionMode.current === MotionMode.SlowDown) {
+          motionRate -= MOTION_ACCELERATION * elapsed;
+        }
+
+        if (motionRate > 0.12) {
+          motionMode.current = MotionMode.SlowDown;
+        } else if (motionRate < 0.02) {
+          motionMode.current = MotionMode.Constant;
+        }
+
+        t += (motionRate / 10 / 16) * elapsed;
       }
 
-      const elapsed = Date.now() - prevFrameTimestamp;
-      prevFrameTimestamp = Date.now();
-
-      if (motionMode.current === MotionMode.SpeedUp) {
-        motionRate += MOTION_ACCELERATION * elapsed;
-      } else if (motionMode.current === MotionMode.SlowDown) {
-        motionRate -= MOTION_ACCELERATION * elapsed;
-      }
-
-      if (motionRate > 0.12) {
-        motionMode.current = MotionMode.SlowDown;
-      } else if (motionRate < 0.02) {
-        motionMode.current = MotionMode.Constant;
-      }
-
-      t += (motionRate / 10 / 16) * elapsed;
       window.requestAnimationFrame(run);
     }
 
     run();
-  }, []);
+  }, [ref]);
 
   return (
     <div className={className}>
-      <span className="relative overflow-hidden">
+      <span className="relative overflow-hidden" ref={ref}>
         <canvas
           className={`absolute top-[1px] left-[-3px] bg-blue-500 w-[calc(100%+14px)] h-[calc(100%+6px)] ${
             rounded && "rounded-full"

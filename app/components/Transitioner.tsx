@@ -3,9 +3,9 @@
 import { useAtom, useSetAtom } from "jotai";
 import { useEffect, useRef, useState } from "react";
 
-import { activeProjectAtom, isTransitioningAtom } from "./state";
-import { OPEN_ANIMATION_DURATION } from "./constants";
-import { Project } from "./projects";
+import { activeProjectAtom, isTransitioningAtom } from "../utils/state";
+import { OPEN_ANIMATION_DURATION } from "../utils/constants";
+import { Project } from "../utils/projects";
 
 function useScrollbarWidth() {
   const didCompute = useRef(false);
