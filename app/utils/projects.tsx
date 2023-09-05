@@ -156,16 +156,90 @@ export const projects: Project[] = [
     ),
   },
   {
-    name: "Partitioning Algorithm",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+    name: "Optimal Conflict Partitions",
+    displayImage: "/projects/cs170.png",
+    tagline: "A novel graph partitioning algorithm.",
+    projectType: projectTypes.Systems,
+    technologies: [
+      technologies.Python,
+      technologies.NumPy,
+      technologies.CPlusPlus,
+    ],
+    link: "https://docs.google.com/document/d/1BGn-1j73AAbWVxJKVFoJSmg48x3sQfZHzVKMjVL8qEM/edit?usp=sharing",
+    githubLink: "https://github.com/anish-shanbhag/cs170-project",
+    longDescription: (
+      <div>
+        Graph partitioning is often an NP-hard problem, meaning that it's
+        computationally extremely hard to find the optimal solution. In this
+        project, my team researched and developed a highly efficient algorithm
+        for one problem in this domain: determining the optimal way to divide
+        people into teams so that the teams are even, while also placing
+        individuals who like each other on the same team. <br />
+        <br />
+        This problem might seem intuitively straightforward but it quickly
+        became clear that even for a small number of individuals, the possible
+        search space was enormous: over 10^30 combinations! We initially
+        experimented in Python with basic optimization approaches like KMeans
+        and various greedy approaches, but these weren't quite sufficient.
+        <br /> <br />
+        After quite a bit of investigation, we landed on an approach that
+        combines two highly effective algorithms. The first is a formulation of
+        the graph partitioning problem as an{" "}
+        <a href="https://en.wikipedia.org/wiki/Integer_programming">
+          integer linear program
+        </a>
+        , which we implemented using the{" "}
+        <a href="https://www.gurobi.com/">Gurobi</a> optimization engine. We
+        found that this approach was guaranteed to give us the optimal team
+        partition due to the precision of our formulation, but the limitation
+        was that solving for the optimum often took multiple hours, or even
+        longer depending on the difficulty of the specific input. <br />
+        <br />
+        To get around this, we used another type of algorithm which is much
+        faster at the cost of a bit of accuracy: simulated annealing. After
+        creating an initial implementation in Python and verifying its
+        effectiveness, we rewrote the optimizer in C++ and incorporated numerous
+        optimizations like the use of SIMD instructions and loop unrolling. This
+        allowed us to complete billions of steps of simulated annealing each
+        second. We combined this with the ILP formulation by initializing the
+        linear program with the solutions found via simulated annealing, then
+        optimizing them even further with Gurobi. <br />
+        <br />
+        We used this algorithm as part of our solution for the Fall 2022 CS 170
+        project competition, and we received 2nd place out of a class of 600+
+        for finding some of the most optimal solutions!
+      </div>
+    ),
   },
   {
-    name: "PC Parts Data Analysis",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+    name: "CPU Data Analysis",
+    displayImage: "/projects/cpu-analysis.png",
+    tagline: "Uncovering trends in consumer CPUs.",
+    projectType: projectTypes.ML,
+    technologies: [
+      technologies.Python,
+      technologies.NumPy,
+      technologies.TypeScript,
+    ],
+    link: "https://github.com/anish-shanbhag/pc-parts",
+    githubLink: "https://github.com/anish-shanbhag/pc-parts",
+    longDescription: (
+      <div>
+        In this data analysis report, we investigated trends in pricing and
+        performance metrics for 3400+ consumer CPUs released in the last few
+        decades. After retrieving, cleaning, and analyzing over 300k data points
+        gathered from online benchmarking sites UserBenchmark and Passmark, we
+        were able to gain insight into how CPUs have evolved over time. <br />
+        <br />
+        Some of our main insights included the breakdown of Moore's law, the
+        shift to multi-core CPUs, and the fluctuations in market share between
+        Intel and AMD. The most interesting discovery, however, was that online
+        benchmarking site UserBenchmark was actually biased in favor of Intel
+        CPUs! We found that PassMark was a much better predictor of actual CPU
+        performance, meaning consumers could be easily misled by UserBenchmark's
+        CPU rankings.
+      </div>
+    ),
   },
   {
     name: "Quantum Computing",
