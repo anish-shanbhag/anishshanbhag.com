@@ -189,7 +189,7 @@ export const ProjectContent = memo(function ProjectContent({
                             autoPlay
                             // controls
                             muted
-                            className="object-cover rounded-md mr-4"
+                            className="object-cover rounded-md mr-4 aspect-[2/1] object-top"
                           >
                             <source
                               src={project.displayImage}
@@ -277,7 +277,7 @@ export const ProjectContent = memo(function ProjectContent({
                         className="absolute w-[min(calc(100vw-5rem),57rem)] overflow-hidden"
                       >
                         {!multiColumn && <ProjectFeatures project={project} />}
-                        {project.longDescription}
+                        <div className="mt-2">{project.longDescription}</div>
                       </div>
                     )}
                   </div>
