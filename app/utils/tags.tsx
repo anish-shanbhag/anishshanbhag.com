@@ -129,4 +129,9 @@ export const technologies = {
     icon: "firebase.png",
     backgroundColor: "#F57C00",
   },
+  Electron: {
+    name: "Electron.js",
+    icon: "electron.png",
+    backgroundColor: "#272a37",
+  },
 } satisfies Record<string, Technology>;

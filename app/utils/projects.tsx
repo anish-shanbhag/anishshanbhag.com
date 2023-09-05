@@ -125,13 +125,14 @@ export const projects: Project[] = [
   {
     name: "BlendCanvas",
     displayImage: "/projects/blendcanvas.png",
-    tagline: "Create fragment shaders with JS.",
+    tagline: "Create graphical shaders with JS.",
     projectType: projectTypes.Systems,
     technologies: [
       technologies.Vue,
       technologies.Firebase,
-      technologies.TypeScript,
       technologies.CPlusPlus,
+      technologies.TypeScript,
+      technologies.Node,
     ],
     link: "https://canvas-vuetify.web.app/",
     githubLink: "https://github.com/anish-shanbhag/blendcanvas",
@@ -242,47 +243,120 @@ export const projects: Project[] = [
     ),
   },
   {
-    name: "Quantum Computing",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+    name: "Quantum Valentine",
+    displayImage: "/projects/quantum.png",
+    tagline: "Nothin' but ❤️ for quantum computers.",
+    projectType: projectTypes.Systems,
+    technologies: [technologies.Python, technologies.NumPy, technologies.AWS],
+    link: "https://github.com/anish-shanbhag/microsoft-ionq-challenge/blob/main/A%20Quantum%20Valentine%E2%80%99s%20Day.pdf",
+    githubLink: "https://github.com/anish-shanbhag/microsoft-ionq-challenge",
+    longDescription: (
+      <div>
+        There are only 8 days left until Valentine's Day and you have no date.
+        Can you muster up the courage and charisma to win over your crush's
+        heart before it's too late, or will you end up without a date for this
+        special Quantum Valentine's Day?! <br /> <br />
+        This fun little adventure combines the best of dating and gaming with
+        the help of classical and quantum computers. Throuh a series of puzzles
+        and challenges, the player must use quantum logic gates to align
+        themselves with their crush, or be left without a date! Each turn
+        involves selecting a quantum unitary gate (Pauli, Hadamard, SWAP, etc.)
+        to move your 2-qubit state closer to that of your partner's, eventually
+        culminating in the circuit being run in a <b>
+          real quantum computer
+        </b>{" "}
+        to check if your crush truly is a good match for you! <br /> <br />
+        I also trained a neural network opponent via deep reinforcement learning
+        that plays the game against you, making for a fun race against the clock
+        as you compete for your Valentine's attention. <br />
+        <br /> This was our team's project for Microsoft's 2023 iQuHACK Quantum
+        Hackathon, where our submission was accepted to run on Microsoft's
+        actual quantum computers - it was a great experience learning how to
+        build on top of this cutting-edge hardware!
+      </div>
+    ),
   },
   {
     name: "DeFolder",
     displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+      "https://user-images.githubusercontent.com/52852612/131261346-c478cc8f-f884-4b53-8254-4d87595000d5.mp4",
+    tagline: "The modern file explorer for Windows.",
+    projectType: projectTypes.Systems,
+    technologies: [
+      technologies.React,
+      technologies.TypeScript,
+      technologies.Electron,
+      technologies.Node,
+    ],
+    githubLink: "https://github.com/anish-shanbhag/defolder",
+    longDescription: (
+      <div>
+        DeFolder is a modern file explorer for Windows filled with unique
+        features like custom icons/animations, blazing-fast folder size
+        calculation, and instant file searching. Increase your productivity by
+        keeping all your important files just a few keystrokes away, and
+        organize everything important to you in a clean, elegant interface.{" "}
+        <br /> <br />I used the Framer Motion animation library and some React
+        performance optimizations to create fluid animations as you navigate to
+        new files. DeFolder also use an inter-process communication system to
+        interface with a Node.js backend, creating a highly performant
+        experience for folder size calculation and directory navigation.
+      </div>
+    ),
   },
   {
     name: "Incremental Pathfinding",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+    displayImage: "/projects/incremental-pathfinding.mp4",
+    tagline: "Improving travel in complex terrain.",
+    projectType: projectTypes.Systems,
+    technologies: [technologies.Python, technologies.NumPy],
+    githubLink: "https://github.com/anish-shanbhag/incremental-pathfinding",
+    longDescription: (
+      <div>
+        In our complex world of mountainous terrain, a simple pathfinding
+        algorithm between two points isn't always sufficient. Whether it's a
+        hiker navigating steep slopes or a truck maneuvering through challenging
+        terrain, there's always certain regions that are preferable to traverse
+        than others. This demonstrates the need for a new type of pathfinding
+        algorithm which is specifically designed to take weighted preference of
+        these regions into account.
+        <br />
+        <br />
+        My approach to solve this tricky problem is an incremental pathfinding
+        algorithm which progressively optimizes and refines an initial route. A*
+        pathfinding is used to generate a low-resolution path between the
+        starting point and target, and the grid size is progressively decreased
+        for each subsequent run of A* to find a more detailed path. This
+        approach drastically increases performance by reducing the potential
+        search space, while still providing results that are nearly identical to
+        a brute-force A* search.
+      </div>
+    ),
   },
-  {
-    name: "Image Split",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
-  },
+  // {
+  //   name: "Image Split",
+  //   displayImage:
+  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
+  //   tagline: "A sample project.",
+  // },
   {
     name: "Hive Online",
     displayImage:
       "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
     tagline: "A sample project.",
   },
-  {
-    name: "Snackpass",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
-  },
-  {
-    name: "A star pathfinding",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
-  },
+  // {
+  //   name: "Snackpass",
+  //   displayImage:
+  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
+  //   tagline: "A sample project.",
+  // },
+  // {
+  //   name: "A star pathfinding",
+  //   displayImage:
+  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
+  //   tagline: "A sample project.",
+  // },
   {
     name: "Convex",
     displayImage:
@@ -313,12 +387,12 @@ export const projects: Project[] = [
       "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
     tagline: "A sample project.",
   },
-  {
-    name: "Gorilla Spotlight",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
-  },
+  // {
+  //   name: "Gorilla Spotlight",
+  //   displayImage:
+  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
+  //   tagline: "A sample project.",
+  // },
   {
     name: "react-styled-input",
     displayImage:
@@ -337,10 +411,10 @@ export const projects: Project[] = [
       "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
     tagline: "A sample project.",
   },
-  {
-    name: "Musical Understanding",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
-  },
+  // {
+  //   name: "Musical Understanding",
+  //   displayImage:
+  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
+  //   tagline: "A sample project.",
+  // },
 ];
