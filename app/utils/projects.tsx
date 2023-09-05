@@ -79,7 +79,7 @@ export const projects: Project[] = [
         project is the result of that effort: a neural network-based approach
         which is trained via two unsupervised algorithms, deep Q learning and
         neuroevolution (a genetic algorithm), resulting in a pretty smart system
-        that achieves a 98% winrate. I still haven't beat it to this day 😅
+        that achieves a 98% winrate. I still haven&apos;t beat it to this day 😅
         Check out my{" "}
         <a href="/projects/mancala-research-paper.pdf">research paper</a> to
         learn more!
@@ -93,16 +93,67 @@ export const projects: Project[] = [
   //   tagline: "A sample project.",
   // },
   {
-    name: "Nexus",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+    name: "Nexus Clash",
+    displayImage: "/projects/nexus.mp4",
+    tagline: "Build and defend in a vibrant 2D world.",
+    projectType: projectTypes.Game,
+    technologies: [
+      technologies.Unity,
+      technologies.CSharp,
+      technologies.SQL,
+      technologies.AWS,
+    ],
+    link: "/projects/nexus.mp4",
+    longDescription: (
+      <div>
+        In this action-packed game where MOBA meets tower defense, you&apos;ll
+        find yourself immersed in a world of 2D battles illuminated by vibrant
+        and radiant characters. There&apos;s limitless ways to craft and expand
+        your base as you work with your team to engage in strategic combat and
+        outsmart your opponents. <br /> <br />
+        Enemies in Nexus Clash have custom-built AI targeting and behavior
+        systems, making sure players are always on their toes. Online play is
+        also possible thanks to Unity&apos;s Photon networking engine, which I
+        used to design a low-latency systems to ensure that gameplay is fluid.
+        <br /> <br />
+        All of the visual effects and art were designed and implemented from
+        scratch by me! It was super fun bringing this world to life with
+        particle simulations and glowing sprites.
+      </div>
+    ),
   },
   {
     name: "BlendCanvas",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+    displayImage: "/projects/blendcanvas.png",
+    tagline: "Create fragment shaders with JS.",
+    projectType: projectTypes.Systems,
+    technologies: [
+      technologies.Vue,
+      technologies.Firebase,
+      technologies.TypeScript,
+      technologies.CPlusPlus,
+    ],
+    link: "https://canvas-vuetify.web.app/",
+    githubLink: "https://github.com/anish-shanbhag/blendcanvas",
+    longDescription: (
+      <div>
+        BlendCanvas is a new JavaScript-esque programming language which is used
+        to write compute and fragment shaders that are optimized to run on the
+        GPU. This enables web and game developers to easily create complex
+        graphics even if they&apos;re unfamiliar with GLSL, which is the
+        low-level, often hard-to-understand language that you&apos;d normally
+        use to write these shaders. BlendCanvas is nearly identical to
+        JavaScript with a few extra features to make writing GPU code easier,
+        and seamlessly compiles to GLSL for full interoperability with the
+        larger shader ecosystem. <br />
+        <br />
+        Along with writing a full parser and compiler for the language itself,
+        I&apos;ve also created a showcase platform where people can share their
+        shaders and edit them in the browser without the need to download any
+        additional software. All shaders are stored persistently using Firebase
+        storage and authentication, so your creations will be available forever!
+      </div>
+    ),
   },
   {
     name: "Partitioning Algorithm",
