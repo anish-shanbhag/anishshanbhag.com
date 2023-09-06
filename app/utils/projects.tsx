@@ -6,7 +6,7 @@ export interface Project {
   name: string;
   displayImage: string;
   additionalImages?: string[];
-  projectType?: ProjectType;
+  projectTypes: ProjectType[];
   technologies: Technology[];
   tagline: string;
   link?: string;
@@ -19,7 +19,7 @@ export const projects: Project[] = [
     name: "AutoBlog",
     displayImage: "/projects/autoblog.mp4",
     tagline: "Reimagining the way we learn to code.",
-    projectType: projectTypes.Web,
+    projectTypes: [projectTypes.Web, projectTypes.Systems],
     technologies: [
       technologies.React,
       technologies.Next,
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     name: "Neural Nets for Mancala",
     displayImage: "/projects/mancala.png",
     tagline: "Mastering the age-old game using ML.",
-    projectType: projectTypes.ML,
+    projectTypes: [projectTypes.ML],
     technologies: [
       technologies.Python,
       technologies.PyTorch,
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     name: "Nexus Clash",
     displayImage: "/projects/nexus.mp4",
     tagline: "Build and defend in a vibrant 2D world.",
-    projectType: projectTypes.Game,
+    projectTypes: [projectTypes.Game],
     technologies: [
       technologies.Unity,
       technologies.CSharp,
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     name: "BlendCanvas",
     displayImage: "/projects/blendcanvas.png",
     tagline: "Create graphical shaders with JS.",
-    projectType: projectTypes.Systems,
+    projectTypes: [projectTypes.Web, projectTypes.Systems],
     technologies: [
       technologies.Vue,
       technologies.Firebase,
@@ -160,7 +160,7 @@ export const projects: Project[] = [
     name: "Optimal Conflict Partitions",
     displayImage: "/projects/cs170.png",
     tagline: "A novel graph partitioning algorithm.",
-    projectType: projectTypes.Systems,
+    projectTypes: [projectTypes.Algorithms],
     technologies: [
       technologies.Python,
       technologies.NumPy,
@@ -170,7 +170,7 @@ export const projects: Project[] = [
     githubLink: "https://github.com/anish-shanbhag/cs170-project",
     longDescription: (
       <div>
-        Graph partitioning is often an NP-hard problem, meaning that it's
+        Graph partitioning is often an NP-hard problem, meaning that it&apos;s
         computationally extremely hard to find the optimal solution. In this
         project, my team researched and developed a highly efficient algorithm
         for one problem in this domain: determining the optimal way to divide
@@ -181,7 +181,7 @@ export const projects: Project[] = [
         became clear that even for a small number of individuals, the possible
         search space was enormous: over 10^30 combinations! We initially
         experimented in Python with basic optimization approaches like KMeans
-        and various greedy approaches, but these weren't quite sufficient.
+        and various greedy approaches, but these weren&apos;t quite sufficient.
         <br /> <br />
         After quite a bit of investigation, we landed on an approach that
         combines two highly effective algorithms. The first is a formulation of
@@ -216,7 +216,7 @@ export const projects: Project[] = [
     name: "CPU Data Analysis",
     displayImage: "/projects/cpu-analysis.png",
     tagline: "Uncovering trends in consumer CPUs.",
-    projectType: projectTypes.ML,
+    projectTypes: [projectTypes.ML],
     technologies: [
       technologies.Python,
       technologies.NumPy,
@@ -232,13 +232,13 @@ export const projects: Project[] = [
         gathered from online benchmarking sites UserBenchmark and Passmark, we
         were able to gain insight into how CPUs have evolved over time. <br />
         <br />
-        Some of our main insights included the breakdown of Moore's law, the
-        shift to multi-core CPUs, and the fluctuations in market share between
-        Intel and AMD. The most interesting discovery, however, was that online
-        benchmarking site UserBenchmark was actually biased in favor of Intel
-        CPUs! We found that PassMark was a much better predictor of actual CPU
-        performance, meaning consumers could be easily misled by UserBenchmark's
-        CPU rankings.
+        Some of our main insights included the breakdown of Moore&apos;s law,
+        the shift to multi-core CPUs, and the fluctuations in market share
+        between Intel and AMD. The most interesting discovery, however, was that
+        online benchmarking site UserBenchmark was actually biased in favor of
+        Intel CPUs! We found that PassMark was a much better predictor of actual
+        CPU performance, meaning consumers could be easily misled by
+        UserBenchmark&apos;s CPU rankings.
       </div>
     ),
   },
@@ -246,33 +246,32 @@ export const projects: Project[] = [
     name: "Quantum Valentine",
     displayImage: "/projects/quantum.png",
     tagline: "Nothin' but ❤️ for quantum computers.",
-    projectType: projectTypes.Systems,
+    projectTypes: [projectTypes.Systems],
     technologies: [technologies.Python, technologies.NumPy, technologies.AWS],
     link: "https://github.com/anish-shanbhag/microsoft-ionq-challenge/blob/main/A%20Quantum%20Valentine%E2%80%99s%20Day.pdf",
     githubLink: "https://github.com/anish-shanbhag/microsoft-ionq-challenge",
     longDescription: (
       <div>
-        There are only 8 days left until Valentine's Day and you have no date.
-        Can you muster up the courage and charisma to win over your crush's
-        heart before it's too late, or will you end up without a date for this
-        special Quantum Valentine's Day?! <br /> <br />
+        There are only 8 days left until Valentine&apos;s Day and you have no
+        date. Can you muster up the courage and charisma to win over your
+        crush&apos;s heart before it&apos;s too late, or will you end up without
+        a date for this special Quantum Valentine&apos;s Day?! <br /> <br />
         This fun little adventure combines the best of dating and gaming with
         the help of classical and quantum computers. Throuh a series of puzzles
         and challenges, the player must use quantum logic gates to align
         themselves with their crush, or be left without a date! Each turn
         involves selecting a quantum unitary gate (Pauli, Hadamard, SWAP, etc.)
-        to move your 2-qubit state closer to that of your partner's, eventually
-        culminating in the circuit being run in a <b>
-          real quantum computer
-        </b>{" "}
-        to check if your crush truly is a good match for you! <br /> <br />
+        to move your 2-qubit state closer to that of your partner&apos;s,
+        eventually culminating in the circuit being run in a{" "}
+        <b>real quantum computer</b> to check if your crush truly is a good
+        match for you! <br /> <br />
         I also trained a neural network opponent via deep reinforcement learning
         that plays the game against you, making for a fun race against the clock
-        as you compete for your Valentine's attention. <br />
-        <br /> This was our team's project for Microsoft's 2023 iQuHACK Quantum
-        Hackathon, where our submission was accepted to run on Microsoft's
-        actual quantum computers - it was a great experience learning how to
-        build on top of this cutting-edge hardware!
+        as you compete for your Valentine&apos;s attention. <br />
+        <br /> This was our team&apos;s project for Microsoft&apos;s 2023
+        iQuHACK Quantum Hackathon, where our submission was accepted to run on
+        Microsoft&apos;s actual quantum computers - it was a great experience
+        learning how to build on top of this cutting-edge hardware!
       </div>
     ),
   },
@@ -281,7 +280,7 @@ export const projects: Project[] = [
     displayImage:
       "https://user-images.githubusercontent.com/52852612/131261346-c478cc8f-f884-4b53-8254-4d87595000d5.mp4",
     tagline: "The modern file explorer for Windows.",
-    projectType: projectTypes.Systems,
+    projectTypes: [projectTypes.Systems, projectTypes.Web],
     technologies: [
       technologies.React,
       technologies.TypeScript,
@@ -308,18 +307,18 @@ export const projects: Project[] = [
     name: "Incremental Pathfinding",
     displayImage: "/projects/incremental-pathfinding.mp4",
     tagline: "Improving travel in complex terrain.",
-    projectType: projectTypes.Systems,
+    projectTypes: [projectTypes.Algorithms],
     technologies: [technologies.Python, technologies.NumPy],
     githubLink: "https://github.com/anish-shanbhag/incremental-pathfinding",
     longDescription: (
       <div>
         In our complex world of mountainous terrain, a simple pathfinding
-        algorithm between two points isn't always sufficient. Whether it's a
-        hiker navigating steep slopes or a truck maneuvering through challenging
-        terrain, there's always certain regions that are preferable to traverse
-        than others. This demonstrates the need for a new type of pathfinding
-        algorithm which is specifically designed to take weighted preference of
-        these regions into account.
+        algorithm between two points isn&apos;t always sufficient. Whether
+        it&apos;s a hiker navigating steep slopes or a truck maneuvering through
+        challenging terrain, there&apos;s always certain regions that are
+        preferable to traverse than others. This demonstrates the need for a new
+        type of pathfinding algorithm which is specifically designed to take
+        weighted preference of these regions into account.
         <br />
         <br />
         My approach to solve this tricky problem is an incremental pathfinding
@@ -333,88 +332,172 @@ export const projects: Project[] = [
       </div>
     ),
   },
-  // {
-  //   name: "Image Split",
-  //   displayImage:
-  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-  //   tagline: "A sample project.",
-  // },
   {
     name: "Hive Online",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
-  },
-  // {
-  //   name: "Snackpass",
-  //   displayImage:
-  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-  //   tagline: "A sample project.",
-  // },
-  // {
-  //   name: "A star pathfinding",
-  //   displayImage:
-  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-  //   tagline: "A sample project.",
-  // },
-  {
-    name: "Convex",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
-  },
-  {
-    name: "Next.js template",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+    displayImage: "/projects/hive.mp4",
+    tagline: "Protect the Queen Bee at all costs.",
+    projectTypes: [projectTypes.Web, projectTypes.Game],
+    technologies: [
+      technologies.Vue,
+      technologies.TypeScript,
+      technologies.Node,
+    ],
+    link: "https://anish-shanbhag.github.io/hive-online/",
+    githubLink: "https://github.com/anish-shanbhag/hive-online",
+    longDescription: (
+      <div>
+        <a href="https://www.gen42.com/games/hive">Hive</a> is an abstract
+        strategy board game like chess, but with a twist: the board is an
+        infinite hexagonal grid, and the pieces are all insects with unique
+        powers! This game is <i>crawling</i> with so many fun possibilities and
+        strategies, yet I found that there was no online version to play with
+        your friends - so I set out to fix that. <br /> <br />
+        Hive Online is an online multiplayer version of Hive powered by
+        peer-to-peer networking, meaning that you can play with anyone, anytime,
+        and anywhere. Challenge your friends, and protect the Queen Bee at all
+        costs!
+      </div>
+    ),
   },
   {
-    name: "POET/PORT",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+    name: "POET",
+    displayImage: "/projects/poet.png",
+    tagline: "Bringing LLMs to the edge.",
+    projectTypes: [projectTypes.ML, projectTypes.Systems],
+    technologies: [
+      technologies.PyTorch,
+      technologies.Python,
+      technologies.NumPy,
+      technologies.AWS,
+      technologies.Docker,
+    ], // TODO: swift
+    link: "https://poet.cs.berkeley.edu/",
+    githubLink: "https://github.com/ShishirPatil/poet",
+    longDescription: (
+      <div>
+        As machine learning models become more and more capable, one question
+        has remained up in the air: how can we ensure that personalized models
+        maintain user privacy while still delivering great performance? <br />
+        <br />
+        POET has the solution: it enables the training of state-of-the-art
+        memory-hungry ML models like GPT and Stable Diffusion on smartphones and
+        other edge devices. POET (Private Optimal Energy Training) utilizes the
+        twin techniques of integrated tensor rematerialization, and
+        paging-in/out of secondary storage to optimize models for training with
+        limited memory. By formulating the problem of edge training as a mixed
+        integer linear program (MILP), our system ensures that the generated
+        training schedules are provably optimal! <br /> <br />
+        Even LLMs like GPT-4 or Llama-70B have seemed out of reach of tiny
+        devices like iPhones, but with POET, we now have a way to bring both
+        model inference and training to the edge. This means that transformers
+        and LLMs can be personalized to user-specific use cases without
+        sacrificing data privacy - a win-win for both model creators and users!
+        <br /> <br />
+        POET is fully open-source and available to use now - check out the
+        GitHub for instructions on how to use the solver, read{" "}
+        <a href="https://arxiv.org/abs/2207.07697">the paper</a> to learn more
+        about the ILP formulation, or head over to the{" "}
+        <a href="https://colab.research.google.com/drive/1iup_edJd9zB1tfVBHXLmkWOT5yoSmXzz">
+          Google Colab
+        </a>{" "}
+        for a live demo!
+      </div>
+    ),
   },
   {
-    name: "iPhone Profiling",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
-  },
-  {
-    name: "Slime Mold",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
-  },
-  // {
-  //   name: "Gorilla Spotlight",
-  //   displayImage:
-  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-  //   tagline: "A sample project.",
-  // },
-  {
-    name: "react-styled-input",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
-  },
-  {
-    name: "fast-folder-size",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+    name: "Physarum Simulations",
+    displayImage: "/projects/physarum.mp4",
+    tagline: "GPU-accelerated cellular automata.",
+    projectTypes: [projectTypes.Systems, projectTypes.Algorithms],
+    technologies: [technologies.Python, technologies.NumPy],
+    link: "/projects/physarum.pdf",
+    githubLink: "https://github.com/anish-shanbhag/physarum-simulations",
+    longDescription: (
+      <div>
+        <i>Physarum polycephalum</i>, more commonly known as slime mold, is a
+        single-celled organism with simple behavior but surprising emergent
+        abilities. They can be simulated using a relatively simple rule:
+        represent the mold as millions of tiny particles which sense and move
+        towards other particles around them. Though this behavior is pretty
+        intuitive, it actually leads to highly complex behavior: the ability to
+        pathfind around obstacles, explore new areas in a web-like structure,
+        and even simulate boolean logic gates in specific environmental
+        conditions!
+        <br /> <br />
+        This simulation captures the emergent behavior of <i>Physarum</i>{" "}
+        through colorful GPU-accelerated particle simulations. By utilizing the
+        performance from Nvidia&apos;s CUDA engine, I was able to simulate the
+        mold using tens of millions of particles, yielding a highly detailed
+        overview of its pathfinding abilities and other characteristics.
+      </div>
+    ),
   },
   {
     name: "Setify",
-    displayImage:
-      "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-    tagline: "A sample project.",
+    displayImage: "/projects/setify.mp4",
+    tagline: "Mix and match your Spotify playlists.",
+    projectTypes: [projectTypes.Web],
+    technologies: [
+      technologies.React,
+      technologies.TypeScript,
+      technologies.Next,
+      technologies.AWS,
+      technologies.Node,
+    ],
+    // TODO: link: "",
+    // TODO: githubLink: "",
+    longDescription: <div>{/* TODO */}</div>,
   },
+  // TODO: finish {
+  //   name: "Convex",
+  //   displayImage:
+  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
+  //   tagline: "A sample project.",
+  // },
   // {
-  //   name: "Musical Understanding",
+  //   name: "Next.js template",
+  //   displayImage:
+  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
+  //   tagline: "A sample project.",
+  // },
+  // {
+  //   name: "iPhone Profiling",
+  //   displayImage:
+  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
+  //   tagline: "A sample project.",
+  // },
+  // {
+  //   name: "react-styled-input",
+  //   displayImage:
+  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
+  //   tagline: "A sample project.",
+  // },
+  // {
+  //   name: "fast-folder-size",
   //   displayImage:
   //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
   //   tagline: "A sample project.",
   // },
 ];
+
+// TODO: unused projects {
+//   name: "Image Split",
+// },
+// {
+//   name: "Snackpass",
+// },
+// {
+//   name: "A star pathfinding",
+// },
+// {
+//   name: "Gorilla Spotlight",
+// },
+// {
+//   name: "Musical Understanding",
+// },
+// {
+//   name: "Next Frame Prediction",
+// },
+// {
+//   name: "Data Project with Michael",
+// },

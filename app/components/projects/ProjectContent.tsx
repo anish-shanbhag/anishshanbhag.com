@@ -215,17 +215,18 @@ export const ProjectContent = memo(function ProjectContent({
                           {project.name}
                         </div>
                         <div className="flex flex-row gap-[0.4rem]">
-                          {project.projectType && (
+                          {project.projectTypes?.map((projectType) => (
                             <div
+                              key={projectType.name}
                               className="px-2 py-[0.06rem] border-[1.5px] rounded-md text-xs font-bold flex justify-center items-center"
                               style={{
-                                borderColor: project.projectType.color,
-                                color: project.projectType.color,
+                                borderColor: projectType.color,
+                                color: projectType.color,
                               }}
                             >
-                              {project.projectType.name}
+                              {projectType.name}
                             </div>
-                          )}
+                          ))}
                           {project.technologies?.map((technology) => (
                             <div
                               key={technology.name}

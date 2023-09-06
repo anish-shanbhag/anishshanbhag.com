@@ -22,7 +22,11 @@ export const projectTypes = {
   },
   Systems: {
     name: "Systems",
-    color: "#dc2626",
+    color: "#0ea5e9",
+  },
+  Algorithms: {
+    name: "Algorithms",
+    color: "#d946ef",
   },
 } satisfies Record<string, ProjectType>;
 

@@ -43,7 +43,7 @@ export default function Navbar() {
               rounded
             >
               <Image
-                src="/rounded-triangle.png"
+                src="/images/rounded-triangle.png"
                 width={40}
                 height={40}
                 className="inline-block"
