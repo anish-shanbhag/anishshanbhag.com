@@ -7,10 +7,52 @@ import Transitioner from "../components/Transitioner";
 import BlurOverlay from "../components/BlurOverlay";
 import { projects } from "../utils/projects";
 
+const title = "Anish Shanbhag | Home";
+const description =
+  "Anish Shanbhag's website, showcasing his personal projects, past work experience in web/AI/ML/computer systems, and links to his social media and resume.";
+export const metadata = {
+  title,
+  description,
+  colorScheme: "light",
+  creator: "Anish Shanbhag",
+  icons: {
+    apple: "/apple-touch-icon.png",
+    icon: "/favicon-32x32.png",
+    other: {
+      rel: "mask-icon",
+      url: "/safari-pinned-tab.svg",
+    },
+  },
+  manifest: "/site.webmanifest",
+  themeColor: "white",
+  keywords: [
+    "Anish",
+    "Shanbhag",
+    "portfolio",
+    "projects",
+    "software",
+    "resume",
+  ],
+  openGraph: {
+    title,
+    description,
+    url: "https://www.anishshanbhag.com",
+    siteName: title,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
+
 export default function Home() {
   return (
     <>
-      <title>Anish Shanbhag | Home</title>
       <BlurOverlay />
       <Transitioner />
       <div className="fixed top-0 w-full h-full z-[-30]">
