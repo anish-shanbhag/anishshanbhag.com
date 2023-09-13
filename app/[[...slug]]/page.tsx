@@ -9,7 +9,7 @@ import { projects } from "../utils/projects";
 
 const title = "Anish Shanbhag | Home";
 const description =
-  "Anish Shanbhag's website, showcasing his personal projects, past work experience in web/AI/ML/computer systems, and links to his social media and resume.";
+  "I'm a full-stack developer currently at UC Berkeley. Check out my project portfolio and software engineering experience!";
 export const metadata = {
   title,
   description,
@@ -30,6 +30,9 @@ export const metadata = {
     "Shanbhag",
     "portfolio",
     "projects",
+    "full-stack",
+    "machine learning",
+    "engineering",
     "software",
     "resume",
   ],
