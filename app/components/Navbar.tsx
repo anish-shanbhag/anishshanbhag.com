@@ -69,7 +69,7 @@ export default function Navbar() {
             <LinkButton
               className="bg-teal-200 shadow-2xl"
               icon={<MdEmail size={20} color="white" />}
-              onClick={(e) => {
+              onClick={() => {
                 router.push(
                   "mail" +
                     "to" +
