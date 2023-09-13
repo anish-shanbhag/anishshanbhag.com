@@ -2,11 +2,12 @@
 
 import { useScrollDirection } from "react-use-scroll-direction";
 import { useScrollYPosition } from "react-use-scroll-position";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { IoIosPaper } from "react-icons/io";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import GradientMask from "./GradientMask";
 
@@ -14,6 +15,7 @@ export default function Navbar() {
   const { isScrollingDown, isScrollingUp } = useScrollDirection();
   const scrollY = useScrollYPosition();
   const [isShown, setIsShown] = useState(true);
+  const router = useRouter();
 
   if (isScrollingDown && isShown && scrollY > 80) {
     setIsShown(false);
@@ -65,13 +67,22 @@ export default function Navbar() {
               icon={<BsGithub size={20} color="white" />}
             />
             <LinkButton
-              href="/"
               className="bg-teal-200 shadow-2xl"
               icon={<MdEmail size={20} color="white" />}
+              onClick={(e) => {
+                router.push(
+                  "mail" +
+                    "to" +
+                    ":anish" +
+                    String.fromCharCode(46) +
+                    "shanbhag@ber" +
+                    "keley.edu",
+                );
+              }}
             />
             <LinkButton
               isLast
-              href="/"
+              href="/anish-shanbhag-resume.pdf"
               className="bg-blue-500"
               icon={<IoIosPaper size={20} color="white" />}
             />
@@ -86,7 +97,8 @@ interface LinkButtonProps {
   isFirst?: boolean;
   isLast?: boolean;
   icon: React.ReactElement;
-  href: string;
+  href?: string;
+  onClick?: MouseEventHandler<HTMLSpanElement>;
   className?: React.ComponentProps<"div">["className"];
 }
 
@@ -95,16 +107,19 @@ function LinkButton({
   isLast,
   icon,
   href,
+  onClick,
   className,
 }: LinkButtonProps) {
   return (
-    <a
-      className={`flex justify-center items-center shadow-[0px_0px_10px_0px_rgba(0,0,0,0.8)] w-[3.5rem] hover:w-[6rem] transition-all duration-300 h-full cursor-pointer ${
-        isFirst && "rounded-l-full"
-      } ${isLast && "rounded-r-full"} ${className}`}
-      href={href}
-    >
-      {icon}
-    </a>
+    <span className="active:brightness-75 h-full" onClick={onClick}>
+      <a
+        className={`flex justify-center items-center shadow-[0px_0px_10px_0px_rgba(0,0,0,0.8)] w-[3.5rem] hover:w-[6rem] transition-all duration-300 h-full cursor-pointer ${
+          isFirst && "rounded-l-full"
+        } ${isLast && "rounded-r-full"} ${className}`}
+        href={href}
+      >
+        {icon}
+      </a>
+    </span>
   );
 }

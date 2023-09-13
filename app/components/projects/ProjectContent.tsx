@@ -187,8 +187,8 @@ export const ProjectContent = memo(function ProjectContent({
                           <video
                             loop
                             autoPlay
-                            // controls
                             muted
+                            playsInline
                             className="object-cover rounded-md mr-4 aspect-[2/1] object-top"
                           >
                             <source

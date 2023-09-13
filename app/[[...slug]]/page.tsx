@@ -13,7 +13,7 @@ export default function Home() {
       <title>Anish Shanbhag | Home</title>
       <BlurOverlay />
       <Transitioner />
-      <div className="fixed top-0 w-full h-full opacity-80 z-[-30]">
+      <div className="fixed top-0 w-full h-full z-[-30]">
         <Image
           src="/images/sky.png"
           priority

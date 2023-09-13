@@ -55,37 +55,51 @@ export const projects: Project[] = [
     ),
   },
   {
-    name: "Neural Nets for Mancala",
-    displayImage: "/projects/mancala.png",
-    tagline: "Mastering the age-old game using ML.",
-    projectTypes: [projectTypes.ML],
+    name: "POET",
+    displayImage: "/projects/poet.png",
+    tagline: "Bringing LLMs to the edge.",
+    projectTypes: [projectTypes.ML, projectTypes.Systems],
     technologies: [
-      technologies.Python,
       technologies.PyTorch,
+      technologies.Python,
       technologies.NumPy,
-    ],
-    link: "/projects/mancala-research-paper.pdf",
-    githubLink: "https://github.com/anish-shanbhag/mancala-neural-networks",
+      technologies.AWS,
+      technologies.Docker,
+    ], // TODO: swift
+    link: "https://poet.cs.berkeley.edu/",
+    githubLink: "https://github.com/ShishirPatil/poet",
     longDescription: (
       <div>
-        <a href="https://en.wikipedia.org/wiki/Mancala">Mancala</a> is one of
-        the world&apos;s oldest board games and has a storied history dating
-        back over 1,300 years. Despite this, there has been relatively little
-        research into AI systems that can effectively play the strategy-based
-        game. <br /> <br />
-        I&apos;ve been playing Mancala for as long as I can remember, and wanted
-        to see if I could create a worthy AI-based opponent. I began to
-        investigate effective ML methods for training an optimal player; this
-        project is the result of that effort: a neural network-based approach
-        which is trained via two unsupervised algorithms, deep Q learning and
-        neuroevolution (a genetic algorithm), resulting in a pretty smart system
-        that achieves a 98% winrate. I still haven&apos;t beat it to this day 😅
-        Check out my{" "}
-        <a href="/projects/mancala-research-paper.pdf">research paper</a> to
-        learn more!
+        As machine learning models become more and more capable, one question
+        has remained up in the air: how can we ensure that personalized models
+        maintain user privacy while still delivering great performance? <br />
+        <br />
+        POET has the solution: it enables the training of state-of-the-art
+        memory-hungry ML models like GPT and Stable Diffusion on smartphones and
+        other edge devices. POET (Private Optimal Energy Training) utilizes the
+        twin techniques of integrated tensor rematerialization, and
+        paging-in/out of secondary storage to optimize models for training with
+        limited memory. By formulating the problem of edge training as a mixed
+        integer linear program (MILP), our system ensures that the generated
+        training schedules are provably optimal! <br /> <br />
+        Even LLMs like GPT-4 or Llama-70B have seemed out of reach of tiny
+        devices like iPhones, but with POET, we now have a way to bring both
+        model inference and training to the edge. This means that transformers
+        and LLMs can be personalized to user-specific use cases without
+        sacrificing data privacy - a win-win for both model creators and users!
+        <br /> <br />
+        POET is fully open-source and available to use now - check out the
+        GitHub for instructions on how to use the solver, read{" "}
+        <a href="https://arxiv.org/abs/2207.07697">the paper</a> to learn more
+        about the ILP formulation, or head over to the{" "}
+        <a href="https://colab.research.google.com/drive/1iup_edJd9zB1tfVBHXLmkWOT5yoSmXzz">
+          Google Colab
+        </a>{" "}
+        for a live demo!
       </div>
     ),
   },
+
   // TODO: {
   //   name: "Minecraft API",
   //   displayImage:
@@ -122,6 +136,150 @@ export const projects: Project[] = [
       </div>
     ),
   },
+  {
+    name: "DeFolder",
+    displayImage: "/projects/defolder.mp4",
+    tagline: "The modern file explorer for Windows.",
+    projectTypes: [projectTypes.Systems, projectTypes.Web],
+    technologies: [
+      technologies.React,
+      technologies.TypeScript,
+      technologies.Electron,
+      technologies.Node,
+    ],
+    githubLink: "https://github.com/anish-shanbhag/defolder",
+    longDescription: (
+      <div>
+        DeFolder is a modern file explorer for Windows filled with unique
+        features like custom icons/animations, blazing-fast folder size
+        calculation, and instant file searching. Increase your productivity by
+        keeping all your important files just a few keystrokes away, and
+        organize everything important to you in a clean, elegant interface.{" "}
+        <br /> <br />I used the Framer Motion animation library and some React
+        performance optimizations to create fluid animations as you navigate to
+        new files. DeFolder also use an inter-process communication system to
+        interface with a Node.js backend, creating a highly performant
+        experience for folder size calculation and directory navigation.
+      </div>
+    ),
+  },
+  {
+    name: "Physarum Simulations",
+    displayImage: "/projects/physarum.mp4",
+    tagline: "GPU-accelerated cellular automata.",
+    projectTypes: [projectTypes.Systems, projectTypes.Algorithms],
+    technologies: [technologies.Python, technologies.NumPy],
+    link: "/projects/physarum.pdf",
+    githubLink: "https://github.com/anish-shanbhag/physarum-simulations",
+    longDescription: (
+      <div>
+        <i>Physarum polycephalum</i>, more commonly known as slime mold, is a
+        single-celled organism with simple behavior but surprising emergent
+        abilities. They can be simulated using a relatively simple rule:
+        represent the mold as millions of tiny particles which sense and move
+        towards other particles around them. Though this behavior is pretty
+        intuitive, it actually leads to highly complex behavior: the ability to
+        pathfind around obstacles, explore new areas in a web-like structure,
+        and even simulate boolean logic gates in specific environmental
+        conditions!
+        <br /> <br />
+        This simulation captures the emergent behavior of <i>Physarum</i>{" "}
+        through colorful GPU-accelerated particle simulations. By utilizing the
+        performance from Nvidia&apos;s CUDA engine, I was able to simulate the
+        mold using tens of millions of particles, yielding a highly detailed
+        overview of its pathfinding abilities and other characteristics.
+      </div>
+    ),
+  },
+  {
+    name: "Hive Online",
+    displayImage: "/projects/hive.mp4",
+    tagline: "Protect the Queen Bee at all costs.",
+    projectTypes: [projectTypes.Web, projectTypes.Game],
+    technologies: [
+      technologies.Vue,
+      technologies.TypeScript,
+      technologies.Node,
+    ],
+    link: "https://anish-shanbhag.github.io/hive-online/",
+    githubLink: "https://github.com/anish-shanbhag/hive-online",
+    longDescription: (
+      <div>
+        <a href="https://www.gen42.com/games/hive">Hive</a> is an abstract
+        strategy board game like chess, but with a twist: the board is an
+        infinite hexagonal grid, and the pieces are all insects with unique
+        powers! This game is <i>crawling</i> with so many fun possibilities and
+        strategies, yet I found that there was no online version to play with
+        your friends - so I set out to fix that. <br /> <br />
+        Hive Online is an online multiplayer version of Hive powered by
+        peer-to-peer networking, meaning that you can play with anyone, anytime,
+        and anywhere. Challenge your friends, and protect the Queen Bee at all
+        costs!
+      </div>
+    ),
+  },
+  {
+    name: "Neural Nets for Mancala",
+    displayImage: "/projects/mancala.png",
+    tagline: "Mastering the age-old game using ML.",
+    projectTypes: [projectTypes.ML],
+    technologies: [
+      technologies.Python,
+      technologies.PyTorch,
+      technologies.NumPy,
+    ],
+    link: "/projects/mancala-research-paper.pdf",
+    githubLink: "https://github.com/anish-shanbhag/mancala-neural-networks",
+    longDescription: (
+      <div>
+        <a href="https://en.wikipedia.org/wiki/Mancala">Mancala</a> is one of
+        the world&apos;s oldest board games and has a storied history dating
+        back over 1,300 years. Despite this, there has been relatively little
+        research into AI systems that can effectively play the strategy-based
+        game. <br /> <br />
+        I&apos;ve been playing Mancala for as long as I can remember, and wanted
+        to see if I could create a worthy AI-based opponent. I began to
+        investigate effective ML methods for training an optimal player; this
+        project is the result of that effort: a neural network-based approach
+        which is trained via two unsupervised algorithms, deep Q learning and
+        neuroevolution (a genetic algorithm), resulting in a pretty smart system
+        that achieves a 98% winrate. I still haven&apos;t beat it to this day 😅
+        Check out my{" "}
+        <a href="/projects/mancala-research-paper.pdf">research paper</a> to
+        learn more!
+      </div>
+    ),
+  },
+  {
+    name: "Incremental Pathfinding",
+    displayImage: "/projects/incremental-pathfinding.mp4",
+    tagline: "Improving travel in complex terrain.",
+    projectTypes: [projectTypes.Algorithms],
+    technologies: [technologies.Python, technologies.NumPy],
+    githubLink: "https://github.com/anish-shanbhag/incremental-pathfinding",
+    longDescription: (
+      <div>
+        In our complex world of mountainous terrain, a simple pathfinding
+        algorithm between two points isn&apos;t always sufficient. Whether
+        it&apos;s a hiker navigating steep slopes or a truck maneuvering through
+        challenging terrain, there&apos;s always certain regions that are
+        preferable to traverse than others. This demonstrates the need for a new
+        type of pathfinding algorithm which is specifically designed to take
+        weighted preference of these regions into account.
+        <br />
+        <br />
+        My approach to solve this tricky problem is an incremental pathfinding
+        algorithm which progressively optimizes and refines an initial route. A*
+        pathfinding is used to generate a low-resolution path between the
+        starting point and target, and the grid size is progressively decreased
+        for each subsequent run of A* to find a more detailed path. This
+        approach drastically increases performance by reducing the potential
+        search space, while still providing results that are nearly identical to
+        a brute-force A* search.
+      </div>
+    ),
+  },
+
   {
     name: "BlendCanvas",
     displayImage: "/projects/blendcanvas.png",
@@ -276,163 +434,6 @@ export const projects: Project[] = [
     ),
   },
   {
-    name: "DeFolder",
-    displayImage:
-      "https://user-images.githubusercontent.com/52852612/131261346-c478cc8f-f884-4b53-8254-4d87595000d5.mp4",
-    tagline: "The modern file explorer for Windows.",
-    projectTypes: [projectTypes.Systems, projectTypes.Web],
-    technologies: [
-      technologies.React,
-      technologies.TypeScript,
-      technologies.Electron,
-      technologies.Node,
-    ],
-    githubLink: "https://github.com/anish-shanbhag/defolder",
-    longDescription: (
-      <div>
-        DeFolder is a modern file explorer for Windows filled with unique
-        features like custom icons/animations, blazing-fast folder size
-        calculation, and instant file searching. Increase your productivity by
-        keeping all your important files just a few keystrokes away, and
-        organize everything important to you in a clean, elegant interface.{" "}
-        <br /> <br />I used the Framer Motion animation library and some React
-        performance optimizations to create fluid animations as you navigate to
-        new files. DeFolder also use an inter-process communication system to
-        interface with a Node.js backend, creating a highly performant
-        experience for folder size calculation and directory navigation.
-      </div>
-    ),
-  },
-  {
-    name: "Incremental Pathfinding",
-    displayImage: "/projects/incremental-pathfinding.mp4",
-    tagline: "Improving travel in complex terrain.",
-    projectTypes: [projectTypes.Algorithms],
-    technologies: [technologies.Python, technologies.NumPy],
-    githubLink: "https://github.com/anish-shanbhag/incremental-pathfinding",
-    longDescription: (
-      <div>
-        In our complex world of mountainous terrain, a simple pathfinding
-        algorithm between two points isn&apos;t always sufficient. Whether
-        it&apos;s a hiker navigating steep slopes or a truck maneuvering through
-        challenging terrain, there&apos;s always certain regions that are
-        preferable to traverse than others. This demonstrates the need for a new
-        type of pathfinding algorithm which is specifically designed to take
-        weighted preference of these regions into account.
-        <br />
-        <br />
-        My approach to solve this tricky problem is an incremental pathfinding
-        algorithm which progressively optimizes and refines an initial route. A*
-        pathfinding is used to generate a low-resolution path between the
-        starting point and target, and the grid size is progressively decreased
-        for each subsequent run of A* to find a more detailed path. This
-        approach drastically increases performance by reducing the potential
-        search space, while still providing results that are nearly identical to
-        a brute-force A* search.
-      </div>
-    ),
-  },
-  {
-    name: "Hive Online",
-    displayImage: "/projects/hive.mp4",
-    tagline: "Protect the Queen Bee at all costs.",
-    projectTypes: [projectTypes.Web, projectTypes.Game],
-    technologies: [
-      technologies.Vue,
-      technologies.TypeScript,
-      technologies.Node,
-    ],
-    link: "https://anish-shanbhag.github.io/hive-online/",
-    githubLink: "https://github.com/anish-shanbhag/hive-online",
-    longDescription: (
-      <div>
-        <a href="https://www.gen42.com/games/hive">Hive</a> is an abstract
-        strategy board game like chess, but with a twist: the board is an
-        infinite hexagonal grid, and the pieces are all insects with unique
-        powers! This game is <i>crawling</i> with so many fun possibilities and
-        strategies, yet I found that there was no online version to play with
-        your friends - so I set out to fix that. <br /> <br />
-        Hive Online is an online multiplayer version of Hive powered by
-        peer-to-peer networking, meaning that you can play with anyone, anytime,
-        and anywhere. Challenge your friends, and protect the Queen Bee at all
-        costs!
-      </div>
-    ),
-  },
-  {
-    name: "POET",
-    displayImage: "/projects/poet.png",
-    tagline: "Bringing LLMs to the edge.",
-    projectTypes: [projectTypes.ML, projectTypes.Systems],
-    technologies: [
-      technologies.PyTorch,
-      technologies.Python,
-      technologies.NumPy,
-      technologies.AWS,
-      technologies.Docker,
-    ], // TODO: swift
-    link: "https://poet.cs.berkeley.edu/",
-    githubLink: "https://github.com/ShishirPatil/poet",
-    longDescription: (
-      <div>
-        As machine learning models become more and more capable, one question
-        has remained up in the air: how can we ensure that personalized models
-        maintain user privacy while still delivering great performance? <br />
-        <br />
-        POET has the solution: it enables the training of state-of-the-art
-        memory-hungry ML models like GPT and Stable Diffusion on smartphones and
-        other edge devices. POET (Private Optimal Energy Training) utilizes the
-        twin techniques of integrated tensor rematerialization, and
-        paging-in/out of secondary storage to optimize models for training with
-        limited memory. By formulating the problem of edge training as a mixed
-        integer linear program (MILP), our system ensures that the generated
-        training schedules are provably optimal! <br /> <br />
-        Even LLMs like GPT-4 or Llama-70B have seemed out of reach of tiny
-        devices like iPhones, but with POET, we now have a way to bring both
-        model inference and training to the edge. This means that transformers
-        and LLMs can be personalized to user-specific use cases without
-        sacrificing data privacy - a win-win for both model creators and users!
-        <br /> <br />
-        POET is fully open-source and available to use now - check out the
-        GitHub for instructions on how to use the solver, read{" "}
-        <a href="https://arxiv.org/abs/2207.07697">the paper</a> to learn more
-        about the ILP formulation, or head over to the{" "}
-        <a href="https://colab.research.google.com/drive/1iup_edJd9zB1tfVBHXLmkWOT5yoSmXzz">
-          Google Colab
-        </a>{" "}
-        for a live demo!
-      </div>
-    ),
-  },
-  {
-    name: "Physarum Simulations",
-    displayImage: "/projects/physarum.mp4",
-    tagline: "GPU-accelerated cellular automata.",
-    projectTypes: [projectTypes.Systems, projectTypes.Algorithms],
-    technologies: [technologies.Python, technologies.NumPy],
-    link: "/projects/physarum.pdf",
-    githubLink: "https://github.com/anish-shanbhag/physarum-simulations",
-    longDescription: (
-      <div>
-        <i>Physarum polycephalum</i>, more commonly known as slime mold, is a
-        single-celled organism with simple behavior but surprising emergent
-        abilities. They can be simulated using a relatively simple rule:
-        represent the mold as millions of tiny particles which sense and move
-        towards other particles around them. Though this behavior is pretty
-        intuitive, it actually leads to highly complex behavior: the ability to
-        pathfind around obstacles, explore new areas in a web-like structure,
-        and even simulate boolean logic gates in specific environmental
-        conditions!
-        <br /> <br />
-        This simulation captures the emergent behavior of <i>Physarum</i>{" "}
-        through colorful GPU-accelerated particle simulations. By utilizing the
-        performance from Nvidia&apos;s CUDA engine, I was able to simulate the
-        mold using tens of millions of particles, yielding a highly detailed
-        overview of its pathfinding abilities and other characteristics.
-      </div>
-    ),
-  },
-  {
     name: "Setify",
     displayImage: "/projects/setify.mp4",
     tagline: "Mix and match your Spotify playlists.",
@@ -446,31 +447,127 @@ export const projects: Project[] = [
     ],
     // TODO: link: "",
     // TODO: githubLink: "",
-    longDescription: <div>{/* TODO */}</div>,
+    longDescription: (
+      <div>
+        Ever wanted to create a mash-up of two banger Spotify playlists, like
+        getting the best of your pop and electronic music in one session? Or
+        maybe you&apos;re in love with your friend&apos;s road trip playlist,
+        but you only want to hear songs which are new to you? <br />
+        <br />
+        If that sounds like something you&apos;d love: <b>Setify</b> is here to
+        help! It&apos;s a new app which integrates directly with your Spotify
+        playlists and lets you mix and match them using the power of{" "}
+        <a href="https://www.skillsyouneed.com/num/set-theory.html">
+          Set Theory
+        </a>
+        ! Easily combine multiple playlists into one, pick out out songs which
+        you and your friends all love, or create curated selections of your
+        ever-growing list of favorites. <br /> <br />A beta version of Setify is
+        coming soon - stay tuned!
+      </div>
+    ),
   },
-  // TODO: finish {
-  //   name: "Convex",
-  //   displayImage:
-  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-  //   tagline: "A sample project.",
-  // },
-  // {
+  {
+    name: "Collaborative Recruiting",
+    displayImage: "/projects/convex.mp4",
+    tagline: "Realtime-synced application portal.",
+    projectTypes: [projectTypes.Web],
+    technologies: [
+      technologies.React,
+      technologies.TypeScript,
+      technologies.Next,
+      technologies.AWS,
+      technologies.Node,
+    ],
+    link: "https://stack.convex.dev/building-an-application-portal",
+    githubLink: "https://github.com/web-at-berkeley/convex",
+    longDescription: (
+      <div>
+        Growing an organization or team is an inherently collaborative process,
+        but current tools for managing often lack the realtime features needed
+        for effectively working together. In this project, my student
+        organization{" "}
+        <a href="http://webatberkeley.org/">Web Development at Berkeley</a>{" "}
+        teamed up with <a href="https://www.convex.dev/">Convex</a> to build an
+        application portal an application portal that unifies the process of
+        applying to student organizations on one convenient website - including
+        unique features like automatically-saved student applications and
+        powerful collaborative tools for organization admins to view application
+        submissions. By building the app with Convex, we were able to represent
+        applicant data as realtime by default, meaning tha reviewers can always
+        see updates live as they come in. <br /> <br />
+        If you&apos;re interested in a deep dive of how we were able to
+        implement this complex data model, check out our{" "}
+        <a href="https://stack.convex.dev/building-an-application-portal">
+          blog post on Convex&apos;s site
+        </a>{" "}
+        to learn more about how my team engineered this project!
+      </div>
+    ),
+  },
+  // TODO: {
   //   name: "Next.js template",
   //   displayImage:
   //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
   //   tagline: "A sample project.",
   // },
-  // {
-  //   name: "iPhone Profiling",
-  //   displayImage:
-  //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-  //   tagline: "A sample project.",
-  // },
+  {
+    name: "CoreML Profiler for iPhone",
+    displayImage: "/projects/coreml.png",
+    tagline: "Performance tooling for ML on iOS.",
+    projectTypes: [projectTypes.ML, projectTypes.Systems],
+    technologies: [
+      technologies.Swift,
+      technologies.Python,
+      technologies.PyTorch,
+      technologies.NumPy,
+    ],
+    githubLink:
+      "https://github.com/poet-projects/iphone-profiling/blob/profiling-automation/Profiling/profile.py",
+    longDescription: (
+      <div>
+        As smartphone GPUs become increasingly powerful, running inference and
+        training for machine learning models on users&apos; own devices is
+        becoming more and more effective. Because of this trend, it&apos;s more
+        important than ever to understand how neural networks and other models
+        are performing layer-by-layer on target hardware. <br />
+        <br />
+        In order to aid in this process, I&apos;ve created a framework for
+        dynamically converting any PyTorch-based model into a Swift profiling
+        script which rigorously measures the compute and memory performance of
+        each execution layer in the neural network. The profiling plan is
+        custom-created for each model by traversing its PyTorch computation
+        graph and automatically generating CoreML models that measure each
+        specific layer type&apos;s performance. <br />
+        <br />
+        The resulting script can be easily run on any device running iOS or
+        macOS and analyzed via{" "}
+        <a href="https://developer.apple.com/videos/play/wwdc2022/10027/">
+          Apple&apos;s CoreML Instrument
+        </a>
+        , enabling model developers to understand and eliminate bottlenecks at a
+        more granular scale than ever before.
+      </div>
+    ),
+  },
   // {
   //   name: "react-styled-input",
   //   displayImage:
   //     "https://fastly.picsum.photos/id/979/200/200.jpg?hmac=WcPMB8O2ujsPsQzJm14ISP-kXmQ59P6G82VPGNwql4I",
-  //   tagline: "A sample project.",
+  //   tagline: "Declarative, granular styling within HTML inputs.",
+  //   projectTypes: [projectTypes.Web],
+  //   technologies: [
+  //     technologies.React,
+  //     technologies.TypeScript,
+  //     technologies.Node,
+  //   ],
+  //   link: "",
+  //   githubLink: "",
+  //   longDescription: (
+  //     <div>
+
+  //     </div>
+  //   ),
   // },
   // {
   //   name: "fast-folder-size",

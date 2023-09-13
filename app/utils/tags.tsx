@@ -83,6 +83,11 @@ export const technologies = {
     icon: "cpp.png",
     backgroundColor: "#044F88",
   },
+  Swift: {
+    name: "Swift",
+    icon: "swift.webp",
+    backgroundColor: "#ff5722",
+  },
   Next: {
     name: "Next.js",
     icon: "nextjs.svg",
