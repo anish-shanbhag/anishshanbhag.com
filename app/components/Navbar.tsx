@@ -111,16 +111,18 @@ function LinkButton({
   onClick,
   className,
 }: LinkButtonProps) {
+  const classes = `flex justify-center items-center shadow-[0px_0px_10px_0px_rgba(0,0,0,0.8)] w-[3.5rem] hover:w-[6rem] transition-all duration-300 h-full cursor-pointer ${
+    isFirst && "rounded-l-full"
+  } ${isLast && "rounded-r-full"} ${className}`;
   return (
     <span className="active:brightness-75 h-full" onClick={onClick}>
-      <a
-        className={`flex justify-center items-center shadow-[0px_0px_10px_0px_rgba(0,0,0,0.8)] w-[3.5rem] hover:w-[6rem] transition-all duration-300 h-full cursor-pointer ${
-          isFirst && "rounded-l-full"
-        } ${isLast && "rounded-r-full"} ${className}`}
-        href={href}
-      >
-        {icon}
-      </a>
+      {onClick ? (
+        <span className={classes}>{icon}</span>
+      ) : (
+        <a className={classes} href={href}>
+          {icon}
+        </a>
+      )}
     </span>
   );
 }
