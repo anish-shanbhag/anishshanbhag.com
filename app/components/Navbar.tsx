@@ -49,6 +49,7 @@ export default function Navbar() {
                 width={40}
                 height={40}
                 className="inline-block"
+                priority
                 alt=""
               />
             </GradientMask>
