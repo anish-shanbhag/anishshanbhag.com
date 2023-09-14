@@ -65,7 +65,7 @@ export const projects: Project[] = [
       technologies.NumPy,
       technologies.AWS,
       technologies.Docker,
-    ], // TODO: swift
+    ],
     link: "https://poet.cs.berkeley.edu/",
     githubLink: "https://github.com/ShishirPatil/poet",
     longDescription: (
