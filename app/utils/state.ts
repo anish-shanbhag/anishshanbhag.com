@@ -6,3 +6,4 @@ import { Project } from "./projects";
 
 export const activeProjectAtom = atom<Project | null>(null);
 export const isTransitioningAtom = atom(false);
+export const isLoadingAtom = atom(true);

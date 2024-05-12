@@ -3,6 +3,9 @@
 import { ReactNode, useLayoutEffect, useRef } from "react";
 import { Noise } from "noisejs";
 import { useInView } from "react-intersection-observer";
+import { useSetAtom } from "jotai";
+
+import { isLoadingAtom } from "../utils/state";
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const noise = new Noise(Math.random());
@@ -37,9 +40,12 @@ export default function GradientMask({
   const { ref, inView } = useInView();
   inViewRef.current = inView;
 
+  const setIsLoading = useSetAtom(isLoadingAtom);
+
   useLayoutEffect(() => {
     if (didSetupAnimation.current) return;
     didSetupAnimation.current = true;
+    setIsLoading(false);
 
     const ctx = canvas.current!.getContext("2d")!;
 

@@ -2,10 +2,11 @@
 
 import { useAtom, useSetAtom } from "jotai";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import { activeProjectAtom, isTransitioningAtom } from "../utils/state";
 import { OPEN_ANIMATION_DURATION } from "../utils/constants";
-import { Project } from "../utils/projects";
+import { Project, projects } from "../utils/projects";
 
 function useScrollbarWidth() {
   const didCompute = useRef(false);
@@ -38,12 +39,16 @@ function useScrollbarWidth() {
 }
 
 let backListenerRegistered = false;
+let checkedProject = false;
 
 export default function Transitioner() {
   const [oldActiveProject, setOldActiveProject] = useState<Project | null>(
     null,
   );
   const [activeProject, setActiveProject] = useAtom(activeProjectAtom);
+
+  const routeAfterSlash = usePathname().split("/").slice(1).join("/");
+
   const setIsTransitioning = useSetAtom(isTransitioningAtom);
 
   const scrollbarWidth = useScrollbarWidth();
@@ -56,6 +61,15 @@ export default function Transitioner() {
           setActiveProject(null);
         }
       });
+    }
+
+    if (!checkedProject) {
+      checkedProject = true;
+      for (const project of projects) {
+        if (routeAfterSlash === project.name) {
+          setActiveProject(project);
+        }
+      }
     }
 
     if (oldActiveProject !== activeProject) {

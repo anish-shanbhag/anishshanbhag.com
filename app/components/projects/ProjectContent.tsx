@@ -10,7 +10,7 @@ import {
   OPEN_ANIMATION_DURATION,
   OPEN_ANIMATION_DURATION_CLASS,
 } from "../../utils/constants";
-import { activeProjectAtom } from "../../utils/state";
+import { activeProjectAtom, isLoadingAtom } from "../../utils/state";
 
 import styles from "./scrollbar.module.css";
 import ProjectFeatures from "./ProjectFeatures";
@@ -38,6 +38,7 @@ export const ProjectContent = memo(function ProjectContent({
   const cardRef = useRef<HTMLDivElement>(null);
 
   const setActiveProject = useSetAtom(activeProjectAtom);
+  const setIsLoading = useSetAtom(isLoadingAtom);
 
   const description = useRef<HTMLDivElement>(null);
 
@@ -74,6 +75,7 @@ export const ProjectContent = memo(function ProjectContent({
       setTimeout(() => {
         setEnableTransition(true);
         setIsOpen(true);
+        setIsLoading(false);
       }, 0);
     }
   }, [isActive, isOpen, enableTransition]);
@@ -81,7 +83,10 @@ export const ProjectContent = memo(function ProjectContent({
   return (
     <OutsideClickHandler
       disabled={!isCurrentProject}
-      onOutsideClick={() => window.history.back()}
+      onOutsideClick={() => {
+        window.history.replaceState({ isProject: false }, null, "/");
+        setActiveProject(null);
+      }}
     >
       <div
         ref={cardRef}
