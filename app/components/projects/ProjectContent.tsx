@@ -84,7 +84,7 @@ export const ProjectContent = memo(function ProjectContent({
     <OutsideClickHandler
       disabled={!isCurrentProject}
       onOutsideClick={() => {
-        window.history.replaceState({ isProject: false }, null, "/");
+        window.history.replaceState({ isProject: false }, "", "/");
         setActiveProject(null);
       }}
     >
